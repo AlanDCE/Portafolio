@@ -10,12 +10,12 @@
             theme: {
                 extend: {
                     colors: {
-                        blackBg: '#030105', // Fondo ultra AMOLED oscuro
+                        blackBg: '#030105', 
                         cardBase: '#0b0612', 
                         cardInner: '#120a1c', 
                         cardBorder: '#2d1b4e', 
-                        primary: '#a855f7', // Morado neón
-                        accentBlue: '#3b82f6', // Azul neón secundario
+                        primary: '#a855f7', 
+                        accentBlue: '#3b82f6', 
                         textMain: '#ffffff', 
                         textMuted: '#9ca3af', 
                     },
@@ -78,7 +78,6 @@
             box-shadow: 0 0 8px rgba(168, 85, 247, 0.8);
         }
 
-        /* Animación suave para hover en tarjetas */
         .hover-glow:hover {
             border-color: rgba(168, 85, 247, 0.4);
             box-shadow: 0 0 25px rgba(168, 85, 247, 0.15);
@@ -92,7 +91,6 @@
         <!-- TARJETA DE PERFIL -->
         <section class="glass-panel rounded-[2rem] p-6 sm:p-8 mb-8 relative overflow-hidden">
             
-            <!-- Estado Superior -->
             <div class="flex flex-wrap items-center justify-between gap-3 mb-8">
                 <div class="flex items-center gap-2 px-4 py-2 rounded-full glass-inner border-green-500/20 bg-green-500/5">
                     <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.8)]"></div>
@@ -153,7 +151,7 @@
                             <span class="text-primary">👨‍💻</span> Dev
                         </span>
                         <span class="flex items-center gap-1 bg-black/40 px-1.5 py-0.5 rounded text-[10px] border border-white/5">
-                            <span class="text-accentBlue">🛡️</span> Mod
+                            <span class="text-accentBlue">🛡️</span> Admin
                         </span>
                     </div>
                     <span class="text-xs text-textMuted italic">Automatizando procesos...</span>
@@ -184,7 +182,7 @@
         <!-- PROYECTOS DESTACADOS -->
         <h3 class="section-title">Proyectos Destacados</h3>
         
-        <!-- Mia Ecosystem Card (NUEVO) -->
+        <!-- Mia Ecosystem Card -->
         <div class="glass-panel rounded-[2rem] overflow-hidden mb-5 hover-glow transition-all duration-300 relative group">
             <div class="absolute top-0 right-0 p-4 z-10">
                 <span class="px-2 py-1 bg-primary/20 text-primary text-xs font-bold rounded border border-primary/30 uppercase tracking-wide">Core Project</span>
@@ -238,7 +236,6 @@
         <h3 class="section-title">Comunidades y Contribuciones</h3>
 
         <div class="flex flex-col gap-4 mb-8">
-            <!-- Glow Launcher -->
             <div class="glass-panel p-5 rounded-[1.5rem] relative group hover-glow transition">
                 <div class="flex justify-between items-start mb-2">
                     <h4 class="text-lg font-bold text-white">Glow Launcher</h4>
@@ -253,7 +250,6 @@
                 </div>
             </div>
 
-            <!-- Py-Clash-Bot -->
             <div class="glass-panel p-5 rounded-[1.5rem] relative group hover-glow transition">
                 <div class="flex justify-between items-start mb-2">
                     <h4 class="text-lg font-bold text-white">Py-Clash-Bot</h4>
@@ -267,7 +263,6 @@
                 </div>
             </div>
 
-            <!-- Lynx Bot -->
             <div class="glass-panel p-5 rounded-[1.5rem] relative group hover-glow transition">
                 <div class="flex justify-between items-start mb-2">
                     <h4 class="text-lg font-bold text-white">Lynx Bot</h4>
@@ -303,18 +298,15 @@
         <!-- ESTADÍSTICAS Y ACTIVITY -->
         <h3 class="section-title">Actividad en GitHub</h3>
         <div class="flex flex-col gap-4 mb-10">
-            <!-- Stats -->
             <img src="https://github-readme-stats.vercel.app/api?username=AlanDCE&theme=radical&hide_border=true&bg_color=0b0612&title_color=a855f7&text_color=9ca3af&icon_color=3b82f6&locale=es" alt="GitHub Stats" class="w-full rounded-[1.5rem] glass-panel p-2">
-            <!-- Lenguajes -->
             <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AlanDCE&theme=radical&hide_border=true&bg_color=0b0612&title_color=a855f7&text_color=9ca3af&layout=compact&locale=es" alt="Top Languages" class="w-full rounded-[1.5rem] glass-panel p-2">
             
             <!-- Commit Snake Animation -->
-            <div class="glass-panel p-4 rounded-[1.5rem] flex flex-col items-center justify-center overflow-hidden">
-                <span class="text-xs text-textMuted font-medium mb-3 uppercase tracking-widest">Commit Activity Snake</span>
-                <picture>
+            <div class="glass-panel p-6 rounded-[2rem] flex flex-col items-center justify-center overflow-hidden border-2 border-primary/20">
+                <span class="text-[10px] text-textMuted font-bold mb-4 uppercase tracking-[0.2em]">Evolución de Commits</span>
+                <picture class="w-full">
                     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AlanDCE/AlanDCE/output/github-contribution-grid-snake-dark.svg">
-                    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AlanDCE/AlanDCE/output/github-contribution-grid-snake.svg">
-                    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/AlanDCE/AlanDCE/output/github-contribution-grid-snake.svg" class="w-full opacity-80 mix-blend-screen" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/AlanDCE/AlanDCE/main/github-contribution-grid-snake.svg'; this.style.opacity='0.5';">
+                    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/AlanDCE/AlanDCE/output/github-contribution-grid-snake-dark.svg" class="w-full drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">
                 </picture>
             </div>
         </div>
