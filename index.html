@@ -86,6 +86,12 @@
 </head>
 <body class="font-sans antialiased min-h-screen selection:bg-primary selection:text-white pb-16 flex justify-center pt-8 sm:pt-16 px-4">
 
+    <!-- Elemento de Audio Oculto -->
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+
     <main class="w-full max-w-2xl">
 
         <!-- TARJETA DE PERFIL -->
@@ -98,12 +104,18 @@
                 </div>
                 
                 <div class="flex gap-2">
-                    <button class="w-10 h-10 flex items-center justify-center rounded-full glass-inner hover:bg-white/10 transition">
-                        <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                    <!-- Botón de Música -->
+                    <button id="music-btn" class="w-10 h-10 flex items-center justify-center rounded-full glass-inner hover:bg-white/10 transition text-gray-300 hover:text-primary">
+                        <!-- Icono de Mute (Por defecto) -->
+                        <svg id="icon-mute" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                        <!-- Icono de Sonido (Oculto inicialmente) -->
+                        <svg id="icon-sound" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
                     </button>
+
+                    <!-- Ojo: Contador Dinámico -->
                     <div class="h-10 px-4 flex items-center gap-2 rounded-full glass-inner text-gray-300 text-sm font-medium">
                         <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                        341
+                        <span id="view-count">...</span>
                     </div>
                 </div>
             </div>
@@ -120,7 +132,6 @@
                 </div>
             </div>
 
-            <!-- SAC Badge -->
             <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#1a0f2e] border border-primary/30 rounded-full mb-4">
                 <span class="text-[10px] uppercase font-bold tracking-widest text-primary">USE CODE</span>
                 <span class="text-xs font-medium text-white">NotMia</span>
@@ -182,7 +193,6 @@
         <!-- PROYECTOS DESTACADOS -->
         <h3 class="section-title">Proyectos Destacados</h3>
         
-        <!-- Mia Ecosystem Card CORREGIDO -->
         <div class="glass-panel rounded-[2rem] overflow-hidden mb-5 hover-glow transition-all duration-300 relative group">
             <div class="absolute top-0 right-0 p-4 z-10">
                 <span class="px-2 py-1 bg-red-500/20 text-red-400 text-xs font-bold rounded border border-red-500/30 uppercase tracking-wide">Admin / Beta Tester</span>
@@ -210,7 +220,6 @@
             </div>
         </div>
 
-        <!-- Software PyMEs -->
         <a href="mailto:escurraalandaniel@gmail.com" class="block glass-panel rounded-[2rem] overflow-hidden mb-8 hover-glow transition-all duration-300 relative group">
             <div class="h-24 w-full bg-gradient-to-br from-[#1a0f2e] to-[#0b0612] relative overflow-hidden flex items-center justify-center border-b border-white/5">
                 <svg class="w-10 h-10 text-primary/40 group-hover:scale-110 group-hover:text-primary transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
@@ -236,7 +245,6 @@
         <h3 class="section-title">Comunidades y Contribuciones</h3>
 
         <div class="flex flex-col gap-4 mb-8">
-            <!-- Glow Launcher -->
             <div class="glass-panel p-5 rounded-[1.5rem] relative group hover-glow transition">
                 <div class="flex justify-between items-start mb-2">
                     <h4 class="text-lg font-bold text-white">Glow Launcher</h4>
@@ -251,7 +259,6 @@
                 </div>
             </div>
 
-            <!-- Py-Clash-Bot -->
             <div class="glass-panel p-5 rounded-[1.5rem] relative group hover-glow transition">
                 <div class="flex justify-between items-start mb-2">
                     <h4 class="text-lg font-bold text-white">Py-Clash-Bot</h4>
@@ -265,7 +272,6 @@
                 </div>
             </div>
 
-            <!-- Lynx Bot -->
             <div class="glass-panel p-5 rounded-[1.5rem] relative group hover-glow transition">
                 <div class="flex justify-between items-start mb-2">
                     <h4 class="text-lg font-bold text-white">Lynx Bot</h4>
@@ -306,17 +312,56 @@
             <!-- Lenguajes -->
             <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AlanDCE&theme=radical&hide_border=true&bg_color=0b0612&title_color=a855f7&text_color=9ca3af&layout=compact&locale=es" alt="Top Languages" class="w-full rounded-[1.5rem] glass-panel p-2">
             
-                        <!-- Commit Snake Animation -->
+            <!-- Commit Snake Animation -->
             <div class="glass-panel p-6 rounded-[2rem] flex flex-col items-center justify-center overflow-hidden border-2 border-primary/20">
                 <span class="text-[10px] text-textMuted font-bold mb-4 uppercase tracking-[0.2em]">Evolución de Commits</span>
                 <picture class="w-full">
                     <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/AlanDCE/AlanDCE/output/snake.svg" class="w-full drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">
                 </picture>
             </div>
-
         </div>
 
     </main>
 
+    <!-- SCRIPTS MÁGICOS (Contador y Música) -->
+    <script>
+        // 1. Lógica del Contador de Visitas con CounterAPI
+        // Registra una visita nueva y actualiza el texto
+        fetch('https://api.counterapi.dev/v1/alandce/portfolio/up')
+            .then(response => response.json())
+            .then(data => {
+                // Actualiza el span con el ID view-count
+                document.getElementById('view-count').innerText = data.count;
+            })
+            .catch(error => {
+                console.error("No se pudo cargar el contador:", error);
+                document.getElementById('view-count').innerText = "341"; // Valor por defecto en caso de error
+            });
+
+        // 2. Lógica del Reproductor de Música
+        const bgMusic = document.getElementById('bg-music');
+        const musicBtn = document.getElementById('music-btn');
+        const iconMute = document.getElementById('icon-mute');
+        const iconSound = document.getElementById('icon-sound');
+        
+        // Volumen al 50% para no asustar al usuario
+        bgMusic.volume = 0.5; 
+
+        musicBtn.addEventListener('click', () => {
+            if (bgMusic.paused) {
+                // Si está pausada, reproducir
+                bgMusic.play();
+                iconMute.classList.add('hidden');
+                iconSound.classList.remove('hidden');
+                musicBtn.classList.add('text-primary');
+            } else {
+                // Si está sonando, pausar
+                bgMusic.pause();
+                iconMute.classList.remove('hidden');
+                iconSound.classList.add('hidden');
+                musicBtn.classList.remove('text-primary');
+            }
+        });
+    </script>
 </body>
 </html>
